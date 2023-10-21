@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" rel="stylesheet" href="style.css" />
+    <title>Squid Game Responsive Website</title>
+  </head>
+  <style>
+    @import url(`https://fonts.googleapis.com/css?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap`);
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-size: "Poppins", sans-serif;
+    }
+    .banner {
+      min-height: 100vh;
+      background: #120e0f url(images/bg.jpg);
+      background-position: center;
+      background-size: cover;
+      padding: 40px 100px;
+      display: flex;
+      align-items: center;
+    }
+    header {
+      position: absolute;
+      top: 40px;
+      display: flex;
+      align-items: center;
+    }
+    .toggle {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      background: #fff;
+      margin-right: 20px;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .toggle::before {
+      content: "";
+      position: absolute;
+      width: 28px;
+      height: 3px;
+      background: #120e12;
+      transform: translateY(-6px);
+      transition: 0.5s;
+    }
+    .toggle.active::before {
+      transform: translateY(0) rotate(45deg);
+    }
+    .toggle::after {
+      content: "";
+      position: absolute;
+      width: 28px;
+      height: 3px;
+      background: #120e12;
+      transform: translateY(6px);
+      transition: 0.5s;
+    }
+    .toggle.active::after {
+      transform: translateY(0) rotate(-45deg);
+    }
+    .navigation {
+      position: fixed;
+      z-index: 9;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: #120e12 url(images/menuBg.jpg);
+      background-position: right;
+      background-size: conver;
+      display: none;
+      padding: 100px;
+    }
+    .navigation.active {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      flex-direction: column;
+    }
+    .navigation li {
+      list-style: none;
+      margin: 4px 0;
+    }
+    .navigation li a {
+      color: #fff;
+      font-size: 2em;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .navigation li a:hover {
+      color: #e83c80;
+      transition: all 100ms ease-in-out;
+    }
+    .content {
+      position: relative;
+      max-width: 700px;
+    }
+    .content .textimg {
+      max-width: 600px;
+      width: 100%;
+    }
+    .content p {
+      color: #fff;
+      font-size: 1.2em;
+      line-height: 1.7em;
+      font-weight: 300;
+    }
+  </style>
+  <body>
+    <section class="banner">
+      <header>
+        <div class="toggle"></div>
+        <a href="#" class="logo"><img src="images/logo.png" alt="logo" /></a>
+      </header>
+      <div class="content">
+        <img src="images/text.png" alt="" class="textimg" />
+        <p>
+          Hundred of cash-strapped players accept a stranger invitatio to
+          compete in children's games. Inside, a temping priz awaits - with
+          deadly high stakes.
+        </p>
+        <a href="#">Watch thrilerr</a>
+      </div>
+    </section>
+    <ul class="navigation">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Abput</a></li>
+      <li><a href="#">Cast</a></li>
+      <li><a href="#">Shop</a></li>
+      <li><a href="#">Content</a></li>
+    </ul>
+
+    <script src="script.js"></script>
+  </body>
+  <script>
+    let menuToggle = document.querySelector(".toggle");
+    let navigation = document.querySelector(".navigation");
+    menuToggle.onclick = function () {
+      menuToggle.classList.toggle("active");
+      navigation.classList.toggle("active");
+    };
+  </script>
+</html>
