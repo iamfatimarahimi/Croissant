@@ -1,6 +1,14 @@
-h1{
-font-family: 'Poppins', sans-serif;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+font-family: 'Playfair Display', serif;
 font-weight: bold;
+}
+h1{
+    font-size: 30px;
 }
 p{
     font-family: 'Poppins', sans-serif;
@@ -9,4 +17,15 @@ p{
 .hero{
     background: #f9f7fe;
     text-align: center;
+}
+.hero p{
+    font-size: 36px;
+    font-weight: bold;
+    margin: 0;
+}
+.hero h2{
+    font-family: 'Poppins', sans-serif;
+    font-weight: normal;
+    line-height: 2;
+    font-size: 24px;
 }
